@@ -1,8 +1,8 @@
 package com.latch.domain.service;
 
-import com.latch.domain.model.BalanceChangeEvent;
+import com.latch.domain.model.BalanceChangedEvent;
 
 public interface BalanceChangedListener {
 
-  void onBalanceChanged(BalanceChangeEvent event);
+  void onBalanceChanged(BalanceChangedEvent event);
 }

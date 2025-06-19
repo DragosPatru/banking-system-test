@@ -2,7 +2,7 @@ package com.latch.domain.model;
 
 import java.math.BigDecimal;
 
-public record BalanceChangeEvent(
+public record BalanceChangedEvent(
     String accountId,
     CurrencyUnit currency,
     BigDecimal oldBalance,
