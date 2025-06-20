@@ -1,6 +1,6 @@
 package com.latch.infrastructure.account;
 
-import com.latch.domain.bank.BankAccountRepository;
+import com.latch.domain.account.BankAccountRepository;
 
 /**
  * TODO: make it singleton & add concrete implementation or annotations for the underlying

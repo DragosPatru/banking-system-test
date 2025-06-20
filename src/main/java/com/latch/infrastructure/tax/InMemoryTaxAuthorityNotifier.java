@@ -2,7 +2,7 @@ package com.latch.infrastructure.tax;
 
 import com.latch.application.TaxAuthorityNotifier;
 import com.latch.application.dto.AccountsBalanceOverview;
-import com.latch.domain.bank.model.BankAccount;
+import com.latch.domain.account.model.BankAccount;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
