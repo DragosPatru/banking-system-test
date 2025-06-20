@@ -1,7 +1,7 @@
 package com.latch.application;
 
 import com.latch.application.dto.AccountsBalanceOverview;
-import com.latch.domain.bank.model.BalanceChangedEvent;
+import com.latch.domain.account.model.BalanceChangedEvent;
 
 public class BalanceChangedEventHandler {
 

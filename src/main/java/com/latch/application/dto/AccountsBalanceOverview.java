@@ -1,6 +1,6 @@
 package com.latch.application.dto;
 
-import com.latch.domain.bank.model.BankAccount;
+import com.latch.domain.account.model.BankAccount;
 
 import java.util.List;
 
