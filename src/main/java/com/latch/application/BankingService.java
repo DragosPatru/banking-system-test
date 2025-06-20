@@ -2,21 +2,23 @@ package com.latch.application;
 
 import com.latch.application.dto.AccountsBalanceOverview;
 import com.latch.domain.account.model.BankAccount;
+import com.latch.domain.customer.model.Customer;
+import com.latch.domain.exception.NonZeroBalanceException;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 public interface BankingService {
 
-  List<BankAccount> createAccounts(String customerId);
+  List<BankAccount> registerCustomer(Customer customer);
 
-  void closeAccounts(String customerId);
+  void unregisterCustomer(String customerId) throws NonZeroBalanceException;
 
   AccountsBalanceOverview getAccountsBalanceOverview(String customerId);
 
-  void deposit(String customerId, BigDecimal amount, String toAccountIban);
+  BankAccount deposit(String customerId, BigDecimal amount, String toAccountIban);
 
-  void withdraw(String customerId, BigDecimal amount, String fromAccountIban);
+  BankAccount withdraw(String customerId, BigDecimal amount, String fromAccountIban);
 
   void startBalanceChangeRecording(String customerId);
 
