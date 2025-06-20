@@ -1,4 +1,6 @@
-package com.latch.domain.model;
+package com.latch.domain.bank.model;
+
+import com.latch.domain.event.DomainEvent;
 
 import java.math.BigDecimal;
 
@@ -7,4 +9,5 @@ public record BalanceChangedEvent(
     CurrencyUnit currency,
     BigDecimal oldBalance,
     BigDecimal newBalance,
-    String customerId) {}
+    String customerId)
+    implements DomainEvent {}

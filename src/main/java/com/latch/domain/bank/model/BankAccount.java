@@ -1,4 +1,4 @@
-package com.latch.domain.model;
+package com.latch.domain.bank.model;
 
 import java.math.BigDecimal;
 

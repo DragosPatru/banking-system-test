@@ -1,4 +1,4 @@
-package com.latch.domain.model;
+package com.latch.domain.customer.model;
 
 public class Customer {
   /*
