@@ -5,6 +5,7 @@ import com.latch.domain.account.BankAccountService;
 import com.latch.domain.account.model.BankAccount;
 import com.latch.domain.customer.CustomerService;
 import com.latch.domain.customer.model.Customer;
+import com.latch.domain.exception.InsufficientFundsException;
 import com.latch.domain.exception.NonZeroBalanceException;
 import com.latch.domain.financialmonitoring.FinancialMonitoringService;
 import java.math.BigDecimal;
@@ -56,7 +57,7 @@ public class BankingServiceImpl implements BankingService {
   }
 
   @Override
-  public BankAccount withdraw(String customerId, BigDecimal amount, String fromAccountIban) {
+  public BankAccount withdraw(String customerId, BigDecimal amount, String fromAccountIban) throws InsufficientFundsException {
     return bankAccountService.withdraw(customerId, amount, fromAccountIban);
   }
 

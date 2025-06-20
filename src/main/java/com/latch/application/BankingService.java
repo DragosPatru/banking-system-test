@@ -3,6 +3,7 @@ package com.latch.application;
 import com.latch.application.dto.AccountsBalanceOverview;
 import com.latch.domain.account.model.BankAccount;
 import com.latch.domain.customer.model.Customer;
+import com.latch.domain.exception.InsufficientFundsException;
 import com.latch.domain.exception.NonZeroBalanceException;
 import java.math.BigDecimal;
 import java.util.List;
@@ -17,7 +18,7 @@ public interface BankingService {
 
   BankAccount deposit(String customerId, BigDecimal amount, String toAccountIban);
 
-  BankAccount withdraw(String customerId, BigDecimal amount, String fromAccountIban);
+  BankAccount withdraw(String customerId, BigDecimal amount, String fromAccountIban) throws InsufficientFundsException;
 
   void startBalanceChangeRecording(String customerId);
 

@@ -6,6 +6,7 @@ import com.latch.domain.account.model.BalanceChangedEvent;
 import com.latch.domain.account.model.BankAccount;
 import com.latch.domain.event.DomainEventPublisher;
 import com.latch.domain.exception.AccountsAlreadyCreatedException;
+import com.latch.domain.exception.InsufficientFundsException;
 import com.latch.domain.exception.NonZeroBalanceException;
 import com.latch.domain.exception.ResourceNotFoundException;
 import java.math.BigDecimal;
@@ -83,11 +84,15 @@ public class BankAccountServiceImpl implements BankAccountService {
 
   /** must be @Transactional */
   @Override
-  public BankAccount withdraw(String customerId, BigDecimal amount, String fromAccountIban) {
+  public BankAccount withdraw(String customerId, BigDecimal amount, String fromAccountIban) throws InsufficientFundsException {
     BankAccount bankAccount =
         repository.findBy(fromAccountIban, customerId).orElseThrow(ResourceNotFoundException::new);
     // TODO: apply business rules for balance & throw checked exception if does not comply
     BigDecimal newBalance = bankAccount.getBalance().subtract(amount);
+    if (newBalance.compareTo(BigDecimal.ZERO) < 0) {
+      throw new InsufficientFundsException(bankAccount.getIban());
+    }
+
     BigDecimal oldBalance = bankAccount.getBalance();
     bankAccount.setBalance(newBalance);
     bankAccount = repository.save(bankAccount);
