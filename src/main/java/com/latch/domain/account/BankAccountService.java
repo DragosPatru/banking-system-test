@@ -1,6 +1,7 @@
 package com.latch.domain.account;
 
 import com.latch.domain.account.model.BankAccount;
+import com.latch.domain.exception.NonZeroBalanceException;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -9,11 +10,11 @@ public interface BankAccountService {
 
   List<BankAccount> createAccounts(String customerId);
 
-  void closeAccounts(String customerId);
+  void closeAccounts(String customerId) throws NonZeroBalanceException;
 
   List<BankAccount> getAccounts(String customerId);
 
-  void deposit(String customerId, BigDecimal amount, String toAccountIban);
+  BankAccount deposit(String customerId, BigDecimal amount, String toAccountIban);
 
-  void withdraw(String customerId, BigDecimal amount, String fromAccountIban);
+  BankAccount withdraw(String customerId, BigDecimal amount, String fromAccountIban);
 }

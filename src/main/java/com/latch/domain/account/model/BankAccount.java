@@ -15,6 +15,13 @@ public class BankAccount {
     this.customerId = customerId;
   }
 
+  public BankAccount(String iban, CurrencyUnit currency, String customerId, BigDecimal balance) {
+    this.iban = iban;
+    this.currency = currency;
+    this.customerId = customerId;
+    this.balance = balance;
+  }
+
   public BigDecimal getBalance() {
     return this.balance;
   }

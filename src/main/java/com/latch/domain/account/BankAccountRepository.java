@@ -7,12 +7,14 @@ import java.util.Optional;
 
 public interface BankAccountRepository {
 
-  Optional<BankAccount> findById(String iban);
+  Optional<BankAccount> findBy(String iban, String customerId);
 
   List<BankAccount> findByCustomerId(String customerId);
 
   /** add or update */
   BankAccount save(BankAccount bankAccount);
+
+  List<BankAccount> saveAll(List<BankAccount> bankAccounts);
 
   void deleteAllByCustomerId(String customerId);
 }
