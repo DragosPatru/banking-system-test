@@ -4,7 +4,6 @@ import com.latch.application.dto.AccountsBalanceOverview;
 import com.latch.domain.account.model.BankAccount;
 import com.latch.domain.customer.model.Customer;
 import com.latch.domain.exception.NonZeroBalanceException;
-
 import java.math.BigDecimal;
 import java.util.List;
 

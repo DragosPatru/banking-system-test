@@ -2,7 +2,6 @@ package com.latch.domain.account;
 
 import com.latch.domain.account.model.BankAccount;
 import com.latch.domain.exception.NonZeroBalanceException;
-
 import java.math.BigDecimal;
 import java.util.List;
 

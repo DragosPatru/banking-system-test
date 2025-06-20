@@ -1,7 +1,6 @@
 package com.latch.domain.account;
 
 import com.latch.domain.account.model.BankAccount;
-
 import java.util.List;
 import java.util.Optional;
 

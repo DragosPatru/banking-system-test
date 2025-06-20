@@ -1,7 +1,6 @@
 package com.latch.domain.account.model;
 
 import com.latch.domain.event.DomainEvent;
-
 import java.math.BigDecimal;
 
 public record BalanceChangedEvent(

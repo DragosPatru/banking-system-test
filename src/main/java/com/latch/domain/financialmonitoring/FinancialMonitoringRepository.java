@@ -3,7 +3,6 @@ package com.latch.domain.financialmonitoring;
 import com.latch.domain.customer.model.Customer;
 import com.latch.domain.exception.DuplicateKeyException;
 import com.latch.domain.financialmonitoring.model.MonitoredCustomer;
-
 import java.util.Optional;
 
 public interface FinancialMonitoringRepository {

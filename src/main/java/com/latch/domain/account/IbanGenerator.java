@@ -4,5 +4,5 @@ import com.latch.domain.account.model.CurrencyUnit;
 
 public interface IbanGenerator {
 
-    String generateIban(CurrencyUnit currencyUnit);
+  String generateIban(CurrencyUnit currencyUnit);
 }

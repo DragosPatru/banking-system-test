@@ -2,7 +2,6 @@ package com.latch.domain.customer;
 
 import com.latch.domain.customer.model.Customer;
 import com.latch.domain.exception.DuplicateKeyException;
-
 import java.util.Optional;
 
 public interface CustomerRepository {
